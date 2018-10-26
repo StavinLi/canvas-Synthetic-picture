@@ -7,3 +7,6 @@ canvas图片合成，支持右键[另存为]
 - 用户头像
 
 ### 用户名
+
+效果预览
+- [https://stavinli.github.io/canvas-Synthetic-picture/](https://stavinli.github.io/canvas-Synthetic-picture/)
