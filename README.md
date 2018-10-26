@@ -1,5 +1,5 @@
 # canvas-Synthetic-picture
-图片合成
+canvas图片合成，支持右键[另存为]
 ## 合成内容
 ### 图片
 - 背景图
