@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="750" height="1334" id="myCanvas"></canvas>
+    <script>
+        var bg = {
+            width: 750,
+            height: 1334,
+            src: "bg1.jpg"
+        }
+        var code = {
+            width: 170,
+            height: 170,
+            src: "code1.png"
+        }
+        var userInfo = {
+            name: "亦琛'",
+            width: 130,
+            height: 130,
+            src: "user1.jpg"
+        }
+        var image = new Image();
+        var image1 = new Image();
+        var image2 = new Image();
+        image.src = bg.src;
+        image1.src = code.src;
+        image2.src = userInfo.src;
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        image.onload = function() {
+            ctx.drawImage(image, 0, 0, bg.width, bg.height);
+            ctx.drawImage(image1, 305, 980, code.width, code.height);
+            ctx.save();
+            ctx.arc(185, 1235, 65, 0, Math.PI * 2, false);
+            ctx.clip();
+            ctx.drawImage(image2, 120, 1171, userInfo.width, userInfo.height); // 在刚刚裁剪的园上画图
+            ctx.restore(); // 还原状态
+            ctx.font = "36px Georgia";
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText(userInfo.name, 270, 1224);
+        }
+    </script>
+</body>
+
+</html>
